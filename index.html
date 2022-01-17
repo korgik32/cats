@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abel:regular&display=swap&subset=cyrillic-ext"
         rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap"
         rel="stylesheet" />
     <title>Document</title>
 </head>
@@ -54,8 +54,8 @@
         <nav class="burger_menu">
             <div class="burger__container">
                 <div class="icons_container">
-                    <!-- <img src="img/menu/cat.png" alt="cat" class="burger__cat">
-                    <button id="burger_close" class="burger__close_button"></button> -->
+                    <!-- <img src="img/menu/cat.png" alt="cat" class="burger__cat"> -->
+                    <button id="burger_close" class="burger__close_button"></button>
                 </div>
 
                 <ul class="burger_list">
@@ -63,6 +63,10 @@
                     <li class="burger__item"><a href="#">Помощь</a></li>
                     <li class="burger__item"><a href="#">Преимущества</a></li>
                     <li class="burger__item"><a href="#">Войти в панель</a></li>
+                    <li class="burger__item"><img
+                            src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/90f591120310049.60af0d9cb0cec.png"
+                            alt=""></li>
+
                 </ul>
             </div>
 
@@ -214,23 +218,40 @@
         burger.onclick = () => {
 
             countClick = !countClick;
-            if (countClick == true)
-                document.getElementsByClassName(`burger_menu`)[0].style.display = 'block';
-            else if (countClick == false)
+            if (countClick == true) {
+                document.getElementsByTagName("body")[0].style.overflow = 'hidden';
+                /* document.getElementsByClassName(`burger_menu`)[0].style.display = 'block'; */
+                document.getElementsByClassName(`burger_menu`)[0].style.left = '0';
+                document.getElementsByClassName(`burger_menu`)[0].style.transition = '0.35s';
+                document.getElementById("burger").style.display = 'none';
+            }
+
+            else if (countClick == false) {
                 document.getElementsByClassName(`burger_menu`)[0].style.display = 'none';
+            }
+
 
         }
-/* 
-                burger_close.onclick = () => {
-        
-                    countClick = !countClick;
-                    if (countClick == true)
-                        document.getElementsByClassName(`burger_menu`)[0].style.display = 'block';
-                    else if (countClick == false)
-                        document.getElementsByClassName(`burger_menu`)[0].style.display = 'none';
-        
-                }
-         */
+
+        burger_close.onclick = () => {
+
+            countClick = !countClick;
+            if (countClick == true) {
+                /* document.getElementsByClassName(`burger_menu`)[0].style.display = 'block'; */
+                document.getElementsByClassName(`burger_menu`)[0].style.left = '-150%';
+
+            }
+            else if (countClick == false) {
+                /* document.getElementsByClassName(`burger_menu`)[0].style.display = 'none'; */
+                document.getElementsByClassName(`burger_menu`)[0].style.left = '-150%';
+                document.getElementById("burger").style.display = '';
+                document.getElementsByTagName("body")[0].style.overflow = 'auto';
+                document.getElementsByClassName(`burger_menu`)[0].style.animation = '';
+            }
+
+
+        }
+
     </script>
 </body>
 

@@ -119,7 +119,7 @@ img{
     height: 60px;
     border-radius: 50px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.22);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.12);
     padding: 0 25px;
     font-size: 16px;
     margin: 0px 0px 0px 10%; 
@@ -134,18 +134,23 @@ img{
 }
 
 .burger_menu{
-    display: none;
+    
+    /* display: none; */
     position: fixed;
     top: 0;
-    left: 0;
-    width: 70%;
+    /* left: 0; */
+    left: -150%;
+    width: 100vw;
     height: 100vh;
-    background-color: rgb(253, 251, 253);
+    /* background-color: rgb(253, 251, 253); */
+    background-color: rgb(255, 255, 255);
     z-index: 100;
     min-height: 500px;
     /* border:2px solid rgb(214, 121, 137); */
-    
+    /* opacity: 0.97; */
+
 }
+
 
 .burger__button{
     display: none;
@@ -153,12 +158,12 @@ img{
 
 .icons_container{
     display: flex;
-    justify-content: space-between;
-    margin: 0px 0px 120px 0px;
+    justify-content: flex-end;
+    margin: 0px 0px 60px 0px;
 }
 
 .burger__close_button {
-
+    margin: 10px 10px 0px 0px;
     background: url(img/menu/close.png) no-repeat;
     background-size: cover;
     width: 50px;
@@ -182,7 +187,23 @@ img{
     align-items: center;  
 }
 
-.burger__item{
+.burger_list img{
+    
+    width: 80%;
+    
+    background-color: rgb(255, 255, 255);
+}
+@media(min-width: 580px) {
+    .burger_list img{
+        width: 60%;
+        }
+}
+@media(min-width: 760px) {
+    .burger_list img{
+        width: 40%;
+        }
+}
+.burger__item:not(:last-child){
     display: flex;
     width: 80%;
     min-height: 40px;
@@ -191,8 +212,9 @@ img{
     border-radius: 10px;
 }
 
+
 .burger__item:not(:last-child) {
-   margin: 0px 0px 50px 0px; 
+   margin: 0px 0px 25px 0px; 
 
 }
 
@@ -292,21 +314,32 @@ text-align: left;
 justify-content: center;
 
     background-color:#6975E2;
-    width: 170px;
+    width: 174px;
     height: 60px;
     border-radius: 50px;
-    
-   
+    border:2px solid transparent;
+    color:white;
     padding: 0 12px;
     text-align: center;
+    transition: 1s;
 }
+
+.main__top_button:hover {
+    background-color:#fafafa;
+    border:2px solid #6975E2;
+    color:#6975E2;
+    
+
+}
+
+
 .main__top_button_text{
     display: inline;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 160%;
-    color:white;
+    
    
 
 }
@@ -753,4 +786,13 @@ line-height: 160%;
 
         margin: 0px 0px 25px 0px;
     }
+}
+
+.footer__block_1 a{
+    color: inherit;
+    
+}
+
+.footer__block_1 *:hover{
+    text-decoration: underline;
 }
